@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Kalio Ayam — Cita Rasa Gurih Khas Minangkabau</title>
+  <meta name="description" content="Mengenal Kalio Ayam khas Minangkabau: potongan ayam kampung yang dimasak sabar bersama santan dan rempah pilihan hingga kuahnya mengental cokelat keemasan.">
+  <meta name="theme-color" content="#14100D">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <!-- Flags JS availability so reveal masks and the loader never hide content without JS -->
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- Preload LCP hero dish image with high fetch priority -->
+  <link rel="preload" as="image" href="/assets/img/hero-topdown.webp" imagesrcset="/assets/img/hero-topdown-480.webp 480w, /assets/img/hero-topdown.webp 758w" imagesizes="(max-width: 640px) 232px, 425px" type="image/webp" fetchpriority="high">
+
+  <!-- Editorial serif (Prata) and clean geometric sans (Jost) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Loaded without blocking first paint; fallback serif/sans render until it arrives -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Prata&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Prata&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Prata&display=swap"></noscript>
+
+  <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body>
+  <a class="skip-link" href="#tentang">Lewati ke konten utama</a>
+
+  <!-- =========================================================
+       PHYSICS SPICE LOADER
+       Automatically skipped when prefers-reduced-motion is active
+       ========================================================= -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__content">
+      <p class="loader__eyebrow">Warisan Kuliner Minangkabau</p>
+      <div class="loader__counter" id="loader-counter">0%</div>
+      <div class="loader__stage" id="loader-stage"></div>
+    </div>
+    <div class="loader__sweep" id="loader-sweep">
+      <span class="loader__line" id="loader-line"></span>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       SECTION 1: HERO (Pinned Stage with Dish & Orbiting Cutouts)
+       ========================================================= -->
+  <section class="pin" id="beranda" aria-label="Beranda Kalio Ayam">
+    <div class="stage" id="stage">
+      <header class="site-header" id="site-header">
+        <div class="site-header__inner">
+          <a class="brand" id="brand-link" href="#beranda" aria-label="Kalio Ayam — Kembali ke atas">
+            <span class="brand__track">
+              <svg class="brand__svg" viewBox="0 0 180 86" width="144" height="69" fill="none" aria-hidden="true">
+                <!-- Stylized Rumah Gadang gonjong roof silhouette + songket diamond -->
+                <path d="M22 46 C44 43 58 28 68 10 C70 24 78 32 90 32 C102 32 110 24 112 10 C122 28 136 43 158 46"
+                      stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M52 46 L128 46" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity="0.7"/>
+                <rect x="86.5" y="16.5" width="7" height="7" rx="1" transform="rotate(45 90 20)" fill="currentColor"/>
+                <text x="90" y="75" text-anchor="middle" fill="currentColor"
+                      font-family="'Prata','Iowan Old Style',Georgia,serif" font-size="21" letter-spacing="2.4">KALIO AYAM</text>
+              </svg>
+            </span>
+          </a>
+        </div>
+
+        <!-- WCAG 2.2.2 pause control for ambient continuous hero rotation (no aria-pressed since label toggles) -->
+        <button class="motion-toggle" id="motion-toggle" type="button" aria-label="Jeda animasi putaran rempah">
+          <span class="motion-toggle__dot" aria-hidden="true"></span>
+          <span class="motion-toggle__label" id="motion-toggle-label">Jeda Gerak</span>
+        </button>
+      </header>
+
+      <!-- LAYER 1: HERO SHOWCASE -->
+      <div class="hero-layer" id="hero-layer">
+        <div class="hero-shape" id="hero-shape" aria-hidden="true">
+          <svg class="hero-cloth" viewBox="0 0 1407 601" preserveAspectRatio="xMidYMax meet" fill="none">
+            <path d="M126 601 L42 365 C22 308 42 243 92 208 L368 24 C422 -12 490 -6 544 12 L863 12 C917 -6 985 -12 1039 24 L1315 208 C1365 243 1385 308 1365 365 L1281 601 Z"
+                  fill="url(#clothGrad)"/>
+            <defs>
+              <radialGradient id="clothGrad" cx="50%" cy="22%" r="78%">
+                <stop offset="0%" stop-color="#6B1717"/>
+                <stop offset="65%" stop-color="#4A0E0E"/>
+                <stop offset="100%" stop-color="#270808"/>
+              </radialGradient>
+            </defs>
+          </svg>
+          <div class="hero-ring" id="hero-ring">
+            <svg viewBox="0 0 1168 1168" fill="none">
+              <defs>
+                <path id="ring-text-path" d="M 584, 584 m -496, 0 a 496,496 0 1,1 992,0 a 496,496 0 1,1 -992,0"/>
+              </defs>
+              <text class="hero-ring__text" textLength="3095" lengthAdjust="spacing">
+                <textPath href="#ring-text-path">GURIH · REMPAH · MINANGKABAU · GURIH · REMPAH · MINANGKABAU ·</textPath>
+              </text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Hero Title + Tagline -->
+        <div class="hero-copy" id="hero-copy">
+          <p class="hero-eyebrow">Sajian Tradisional Sumatera Barat</p>
+          <h1 class="hero-title">Kalio Ayam</h1>
+          <p class="hero-tagline">Cita rasa gurih khas Minangkabau</p>
+        </div>
+
+        <!-- Centerpiece Dish + 7 Floating Ingredient Cutouts -->
+        <div class="hero-stage" id="hero-stage" data-cursor="PUTAR REMPAH">
+          <div class="hero-orbit" id="hero-orbit" aria-hidden="true">
+            <figure class="orbit-item" data-orbit="0" data-depth="1.12" data-angle="-154">
+              <img src="/assets/img/bahan-santan.webp" srcset="/assets/img/bahan-santan-480.webp 480w, /assets/img/bahan-santan.webp 859w" sizes="(max-width: 640px) 76px, 162px" alt="" width="859" height="624" fetchpriority="low" decoding="async">
+            </figure>
+            <figure class="orbit-item" data-orbit="1" data-depth="0.96" data-angle="-103">
+              <img src="/assets/img/bahan-ayam.webp" srcset="/assets/img/bahan-ayam-480.webp 480w, /assets/img/bahan-ayam.webp 740w" sizes="(max-width: 640px) 76px, 162px" alt="" width="740" height="672" fetchpriority="low" decoding="async">
+            </figure>
+            <figure class="orbit-item" data-orbit="2" data-depth="1.04" data-angle="-51">
+              <img src="/assets/img/bahan-lengkuas.webp" srcset="/assets/img/bahan-lengkuas-480.webp 480w, /assets/img/bahan-lengkuas.webp 836w" sizes="(max-width: 640px) 76px, 162px" alt="" width="836" height="464" fetchpriority="low" decoding="async">
+            </figure>
+            <figure class="orbit-item" data-orbit="3" data-depth="1.18" data-angle="0">
+              <img src="/assets/img/bahan-serai.webp" srcset="/assets/img/bahan-serai-480.webp 480w, /assets/img/bahan-serai.webp 868w" sizes="(max-width: 640px) 76px, 162px" alt="" width="868" height="734" fetchpriority="low" decoding="async">
+            </figure>
+            <figure class="orbit-item" data-orbit="4" data-depth="0.94" data-angle="51">
+              <img src="/assets/img/bahan-daun-salam.webp" srcset="/assets/img/bahan-daun-salam-480.webp 480w, /assets/img/bahan-daun-salam.webp 760w" sizes="(max-width: 640px) 76px, 162px" alt="" width="760" height="740" fetchpriority="low" decoding="async">
+            </figure>
+            <figure class="orbit-item" data-orbit="5" data-depth="1.06" data-angle="103">
+              <img src="/assets/img/bahan-kunyit.webp" srcset="/assets/img/bahan-kunyit-480.webp 480w, /assets/img/bahan-kunyit.webp 916w" sizes="(max-width: 640px) 76px, 162px" alt="" width="916" height="788" fetchpriority="low" decoding="async">
+            </figure>
+            <figure class="orbit-item" data-orbit="6" data-depth="0.98" data-angle="154">
+              <img src="/assets/img/bahan-jahe.webp" srcset="/assets/img/bahan-jahe-480.webp 480w, /assets/img/bahan-jahe.webp 868w" sizes="(max-width: 640px) 76px, 162px" alt="" width="868" height="432" fetchpriority="low" decoding="async">
+            </figure>
+          </div>
+
+          <!-- Centerpiece Hero Bowl (LCP candidate) -->
+          <div class="hero-dish" id="hero-dish">
+            <div class="hero-dish__glow" aria-hidden="true"></div>
+            <img
+              class="hero-dish__img"
+              id="hero-dish-img"
+              src="/assets/img/hero-topdown.webp" srcset="/assets/img/hero-topdown-480.webp 480w, /assets/img/hero-topdown.webp 758w" sizes="(max-width: 640px) 232px, 425px"
+              alt="Tampak atas Kalio Ayam khas Minangkabau dalam mangkuk keramik gelap dengan kuah santan kental cokelat keemasan, serai, daun jeruk, daun kunyit, dan irisan cabai merah"
+              width="758"
+              height="760"
+              fetchpriority="high"
+            >
+          </div>
+        </div>
+
+        <!-- Scroll discovery cue -->
+        <div class="hero-scroll-cue" id="hero-scroll-cue">
+          <span>Gulir untuk menjelajah</span>
+          <span class="hero-scroll-cue__line" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <!-- LAYER 2: SCROLL-DRIVEN DISH REVEAL -->
+      <div class="dish-hero" id="dish-hero" aria-hidden="true">
+        <p class="dish-hero__title" id="dish-hero-title" data-reveal="chars">
+          APA ITU<br>KALIO AYAM
+        </p>
+
+        <div class="dish-hero__meta dish-hero__meta--left" id="dish-meta-left" data-reveal="lines">
+          Santan Kental &amp;<br>Bumbu Rempah
+        </div>
+        <div class="dish-hero__meta dish-hero__meta--right" id="dish-meta-right" data-reveal="lines">
+          Cokelat Keemasan<br>Khas Minangkabau
+        </div>
+
+        <!-- Initially hidden inside sticky stage: deprioritized so LCP hero-topdown loads uncontested -->
+        <div class="dish-hero__bowl" id="dish-hero-bowl">
+          <img
+            src="/assets/img/hero-angle.webp" srcset="/assets/img/hero-angle-480.webp 480w, /assets/img/hero-angle.webp 806w" sizes="(max-width: 760px) 340px, 550px"
+            alt="Sudut pandang miring semangkuk Kalio Ayam dengan kuah santan kental mengilap yang menyelimuti potongan ayam kampung"
+            width="806"
+            height="642"
+            fetchpriority="low"
+            loading="lazy"
+            decoding="async"
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- =========================================================
+         SECTION 2: APA ITU KALIO AYAM
+         ========================================================= -->
+    <section class="about-section" id="tentang" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="about-layout">
+          <div class="about-intro">
+            <span class="section-kicker" data-reveal="lines">01 — Mengenal Hidangan</span>
+            <h2 class="section-title" id="about-heading" data-reveal="chars">Apa itu Kalio Ayam</h2>
+
+            <!-- TODO(fact-check): Verify culinary description of Kalio Ayam against your preferred Minangkabau culinary reference. -->
+            <p class="about-lead" data-reveal="lines">
+              Kalio Ayam adalah hidangan tradisional Minangkabau berupa potongan ayam yang dimasak perlahan bersama santan dan bumbu rempah hingga kuahnya mengental dan berwarna cokelat keemasan.
+            </p>
+
+            <span class="diamond-mark" aria-hidden="true"></span>
+
+            <!-- TODO(fact-check): Confirm characterization of kalio texture positioned between lighter yellow gulai and dry rendang. -->
+            <p class="about-note" data-reveal="lines">
+              <strong>Ciri khasnya terletak pada kuah:</strong> lebih pekat, berkilau, dan kental dibandingkan gulai kuning, namun tetap basah serta lembut membalut daging dibandingkan rendang kering. Setiap potong ayam menyerap gurihnya santan dan hangatnya rempah secara merata.
+            </p>
+          </div>
+
+          <figure class="about-closeup">
+            <div class="about-closeup__glow" aria-hidden="true"></div>
+            <img
+              class="about-closeup__img"
+              src="/assets/img/hero-closeup.webp" srcset="/assets/img/hero-closeup-480.webp 480w, /assets/img/hero-closeup.webp 876w" sizes="(max-width: 760px) 250px, 440px"
+              alt="Foto jarak dekat sepotong ayam Kalio berbalut kuah kental mengilap berwarna cokelat keemasan dengan butiran rempah dan irisan cabai merah"
+              width="876"
+              height="716"
+              loading="lazy"
+              decoding="async"
+            >
+            <figcaption class="about-closeup__caption">
+              Tekstur kuah kalio: kental mengilap cokelat keemasan dengan butiran bumbu yang melekat pada ayam.
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="facts-grid">
+          <div class="fact-col">
+            <h3 class="fact-col__label" data-reveal="lines">Tekstur &amp; Warna Kuah</h3>
+            <p class="fact-col__value" data-reveal="lines">
+              Cokelat keemasan mengilap dengan minyak santan lembut dan bumbu halus yang menyelimuti potongan ayam.
+            </p>
+          </div>
+          <div class="fact-col">
+            <h3 class="fact-col__label" data-reveal="lines">Karakter Rasa</h3>
+            <div class="flavor-badges" aria-label="Karakter rasa Kalio Ayam">
+              <span class="flavor-pill">Gurih Santan</span>
+              <span class="flavor-pill">Harum Rempah</span>
+              <span class="flavor-pill">Pedas Hangat</span>
+            </div>
+          </div>
+          <div class="fact-col">
+            <h3 class="fact-col__label" data-reveal="lines">Hadir di Meja Minang</h3>
+            <!-- TODO(fact-check): Confirm general cultural context of Kalio Ayam in everyday and festive Minangkabau dining. -->
+            <p class="fact-col__value" data-reveal="lines">
+              Disajikan hangat dalam santap keluarga sehari-hari maupun hidangan kebersamaan masyarakat Minangkabau di Sumatera Barat.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Songket-inspired geometric SVG divider -->
+    <div class="songket-divider" aria-hidden="true">
+      <svg viewBox="0 0 1200 28" preserveAspectRatio="xMidYMid slice" fill="none">
+        <defs>
+          <pattern id="songket-pat" x="0" y="0" width="48" height="28" patternUnits="userSpaceOnUse">
+            <path d="M0 14 H10 M38 14 H48" stroke="#C9A24B" stroke-opacity="0.45" stroke-width="1"/>
+            <path d="M24 3 L35 14 L24 25 L13 14 Z" stroke="#C9A24B" stroke-opacity="0.72" stroke-width="1.1"/>
+            <path d="M24 8.5 L29.5 14 L24 19.5 L18.5 14 Z" fill="#C9A24B" fill-opacity="0.55"/>
+            <circle cx="6" cy="14" r="1.4" fill="#C9A24B" fill-opacity="0.45"/>
+            <circle cx="42" cy="14" r="1.4" fill="#C9A24B" fill-opacity="0.45"/>
+          </pattern>
+        </defs>
+        <rect width="1200" height="28" fill="url(#songket-pat)"/>
+      </svg>
+    </div>
+
+    <!-- =========================================================
+         SECTION 3: BAHAN-BAHAN
+         Stage A: all 7 ingredients together (staggered reveal)
+         Stage B: scroll-pinned sequence, one ingredient at a time
+         ========================================================= -->
+    <section class="ingredients" id="bahan" aria-labelledby="bahan-heading">
+      <div class="ingredients-overview container">
+        <div class="section-header">
+          <span class="section-kicker" data-reveal="lines">02 — Tujuh Komponen Utama</span>
+          <h2 class="section-title" id="bahan-heading" data-reveal="chars">Bahan-bahan</h2>
+          <p class="section-subtitle" data-reveal="lines">Bahan-bahan di balik kuah kalio yang kental dan harum.</p>
+        </div>
+
+        <ul class="ingredients-arc" id="ingredients-arc" aria-label="Daftar tujuh bahan utama Kalio Ayam">
+          <li class="arc-card" style="--stagger: 0; --arc-offset: 22px;">
+            <a class="arc-card__link" href="#peran" data-role-jump="0" data-cursor="LIHAT PERAN">
+              <span class="arc-card__pedestal" aria-hidden="true"></span>
+              <div class="arc-card__media">
+                <img
+                  src="/assets/img/bahan-ayam.webp" srcset="/assets/img/bahan-ayam-480.webp 480w, /assets/img/bahan-ayam.webp 740w" sizes="(max-width: 760px) 150px, 230px"
+                  alt="Potongan daging ayam kampung segar bagian paha bawah dan paha atas"
+                  width="740"
+                  height="672"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </div>
+              <span class="arc-card__name">Daging Ayam</span>
+            </a>
+          </li>
+
+          <li class="arc-card" style="--stagger: 1; --arc-offset: 6px;">
+            <a class="arc-card__link" href="#peran" data-role-jump="1" data-cursor="LIHAT PERAN">
+              <span class="arc-card__pedestal" aria-hidden="true"></span>
+              <div class="arc-card__media">
+                <img
+                  src="/assets/img/bahan-santan.webp" srcset="/assets/img/bahan-santan-480.webp 480w, /assets/img/bahan-santan.webp 859w" sizes="(max-width: 760px) 150px, 230px"
+                  alt="Belahan buah kelapa tua segar dengan daging kelapa putih tebal dan kelapa parut"
+                  width="859"
+                  height="624"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </div>
+              <span class="arc-card__name">Santan</span>
+            </a>
+          </li>
+
+          <li class="arc-card" style="--stagger: 2; --arc-offset: 6px;">
+            <a class="arc-card__link" href="#peran" data-role-jump="2" data-cursor="LIHAT PERAN">
+              <span class="arc-card__pedestal" aria-hidden="true"></span>
+              <div class="arc-card__media">
+                <img
+                  src="/assets/img/bahan-lengkuas.webp" srcset="/assets/img/bahan-lengkuas-480.webp 480w, /assets/img/bahan-lengkuas.webp 836w" sizes="(max-width: 760px) 150px, 230px"
+                  alt="Rimpang lengkuas segar utuh dan irisan melintang berwarna putih pucat"
+                  width="836"
+                  height="464"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </div>
+              <span class="arc-card__name">Lengkuas</span>
+            </a>
+          </li>
+
+          <li class="arc-card" style="--stagger: 3; --arc-offset: 22px;">
+            <a class="arc-card__link" href="#peran" data-role-jump="3" data-cursor="LIHAT PERAN">
+              <span class="arc-card__pedestal" aria-hidden="true"></span>
+              <div class="arc-card__media">
+                <img
+                  src="/assets/img/bahan-jahe.webp" srcset="/assets/img/bahan-jahe-480.webp 480w, /assets/img/bahan-jahe.webp 868w" sizes="(max-width: 760px) 150px, 230px"
+                  alt="Rimpang jahe segar beserta tiga irisan tipis berwarna kuning keemasan"
+                  width="868"
+                  height="432"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </div>
+              <span class="arc-card__name">Jahe</span>
+            </a>
+          </li>
+
+          <li class="arc-card" style="--stagger: 4; --arc-offset: 14px;">
+            <a class="arc-card__link" href="#peran" data-role-jump="4" data-cursor="LIHAT PERAN">
+              <span class="arc-card__pedestal" aria-hidden="true"></span>
+              <div class="arc-card__media">
+                <img
+                  src="/assets/img/bahan-kunyit.webp" srcset="/assets/img/bahan-kunyit-480.webp 480w, /assets/img/bahan-kunyit.webp 916w" sizes="(max-width: 760px) 150px, 230px"
+                  alt="Rimpang kunyit segar yang dibelah berwarna jingga pekat dengan daun kunyit hijau"
+                  width="916"
+                  height="788"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </div>
+              <span class="arc-card__name">Kunyit</span>
+            </a>
+          </li>
+
+          <li class="arc-card" style="--stagger: 5; --arc-offset: 0px;">
+            <a class="arc-card__link" href="#peran" data-role-jump="5" data-cursor="LIHAT PERAN">
+              <span class="arc-card__pedestal" aria-hidden="true"></span>
+              <div class="arc-card__media">
+                <img
+                  src="/assets/img/bahan-serai.webp" srcset="/assets/img/bahan-serai-480.webp 480w, /assets/img/bahan-serai.webp 868w" sizes="(max-width: 760px) 150px, 230px"
+                  alt="Dua batang serai segar yang dimemarkan dan disimpul bersama daun jeruk purut"
+                  width="868"
+                  height="734"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </div>
+              <span class="arc-card__name">Serai</span>
+            </a>
+          </li>
+
+          <li class="arc-card" style="--stagger: 6; --arc-offset: 14px;">
+            <a class="arc-card__link" href="#peran" data-role-jump="6" data-cursor="LIHAT PERAN">
+              <span class="arc-card__pedestal" aria-hidden="true"></span>
+              <div class="arc-card__media">
+                <img
+                  src="/assets/img/bahan-daun-salam.webp" srcset="/assets/img/bahan-daun-salam-480.webp 480w, /assets/img/bahan-daun-salam.webp 760w" sizes="(max-width: 760px) 150px, 230px"
+                  alt="Seikat daun salam segar berwarna hijau tua mengilap pada tangkai pendek"
+                  width="760"
+                  height="740"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </div>
+              <span class="arc-card__name">Daun Salam</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="roles-pin" id="peran">
+        <div class="roles-sticky" id="roles-sticky">
+          <div class="roles-bg" aria-hidden="true">
+            <img src="/assets/img/bg-kayu.webp" alt="" width="1376" height="768" loading="lazy" decoding="async">
+          </div>
+
+          <div class="roles-head container">
+            <div>
+              <span class="section-kicker">Harmoni Rasa &amp; Aroma</span>
+              <h3 class="roles-title" id="peran-heading">Peran Setiap Bahan</h3>
+            </div>
+
+            <div class="roles-progress" aria-live="polite">
+              <span class="roles-progress__count" id="role-count">01 / 07</span>
+              <div class="roles-progress__bar" aria-hidden="true">
+                <span class="roles-progress__fill" id="role-progress-fill"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Unclipped focus wrapper around clipped spotlight stage (modern-web-guidance motion rule) -->
+          <div class="roles-focus-shell container">
+            <div
+              class="roles-stage"
+              id="roles-stage"
+              tabindex="0"
+              role="region"
+              aria-label="Urutan peran setiap bahan Kalio Ayam. Gulir halaman atau gunakan tombol panah kiri dan kanan."
+              data-cursor="GESER BAHAN"
+            >
+              <article class="role-slide is-active" data-role-index="0">
+                <div class="role-slide__visual">
+                  <span class="role-slide__halo" aria-hidden="true"></span>
+                  <img
+                    class="role-slide__img"
+                    src="/assets/img/bahan-ayam.webp" srcset="/assets/img/bahan-ayam-480.webp 480w, /assets/img/bahan-ayam.webp 740w" sizes="(max-width: 760px) 320px, 520px"
+                    alt="Potongan daging ayam kampung segar untuk Kalio Ayam"
+                    width="740"
+                    height="672"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                </div>
+                <div class="role-slide__copy">
+                  <span class="role-slide__step">Bahan 01 dari 07</span>
+                  <h4 class="role-slide__name">Daging Ayam</h4>
+                  <p class="role-slide__desc">Bahan utama yang menjadi inti hidangan.</p>
+                </div>
+              </article>
+
+              <article class="role-slide" data-role-index="1">
+                <div class="role-slide__visual">
+                  <span class="role-slide__halo" aria-hidden="true"></span>
+                  <img
+                    class="role-slide__img"
+                    src="/assets/img/bahan-santan.webp" srcset="/assets/img/bahan-santan-480.webp 480w, /assets/img/bahan-santan.webp 859w" sizes="(max-width: 760px) 320px, 520px"
+                    alt="Kelapa segar belah dan kelapa parut sebagai sumber santan Kalio Ayam"
+                    width="859"
+                    height="624"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                </div>
+                <div class="role-slide__copy">
+                  <span class="role-slide__step">Bahan 02 dari 07</span>
+                  <h4 class="role-slide__name">Santan</h4>
+                  <p class="role-slide__desc">Memberi rasa gurih dan kuah yang kental saat dimasak lama.</p>
+                </div>
+              </article>
+
+              <article class="role-slide" data-role-index="2">
+                <div class="role-slide__visual">
+                  <span class="role-slide__halo" aria-hidden="true"></span>
+                  <img
+                    class="role-slide__img"
+                    src="/assets/img/bahan-lengkuas.webp" srcset="/assets/img/bahan-lengkuas-480.webp 480w, /assets/img/bahan-lengkuas.webp 836w" sizes="(max-width: 760px) 320px, 520px"
+                    alt="Rimpang lengkuas segar dan irisan bagian dalamnya"
+                    width="836"
+                    height="464"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                </div>
+                <div class="role-slide__copy">
+                  <span class="role-slide__step">Bahan 03 dari 07</span>
+                  <h4 class="role-slide__name">Lengkuas</h4>
+                  <p class="role-slide__desc">Memberi aroma segar dengan sentuhan pedas hangat.</p>
+                </div>
+              </article>
+
+              <article class="role-slide" data-role-index="3">
+                <div class="role-slide__visual">
+                  <span class="role-slide__halo" aria-hidden="true"></span>
+                  <img
+                    class="role-slide__img"
+                    src="/assets/img/bahan-jahe.webp" srcset="/assets/img/bahan-jahe-480.webp 480w, /assets/img/bahan-jahe.webp 868w" sizes="(max-width: 760px) 320px, 520px"
+                    alt="Rimpang jahe segar dengan irisan melintang kuning muda"
+                    width="868"
+                    height="432"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                </div>
+                <div class="role-slide__copy">
+                  <span class="role-slide__step">Bahan 04 dari 07</span>
+                  <h4 class="role-slide__name">Jahe</h4>
+                  <p class="role-slide__desc">Menambah kehangatan dan menyeimbangkan rasa.</p>
+                </div>
+              </article>
+
+              <article class="role-slide" data-role-index="4">
+                <div class="role-slide__visual">
+                  <span class="role-slide__halo" aria-hidden="true"></span>
+                  <img
+                    class="role-slide__img"
+                    src="/assets/img/bahan-kunyit.webp" srcset="/assets/img/bahan-kunyit-480.webp 480w, /assets/img/bahan-kunyit.webp 916w" sizes="(max-width: 760px) 320px, 520px"
+                    alt="Rimpang kunyit jingga segar bersama lembaran daun kunyit"
+                    width="916"
+                    height="788"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                </div>
+                <div class="role-slide__copy">
+                  <span class="role-slide__step">Bahan 05 dari 07</span>
+                  <h4 class="role-slide__name">Kunyit</h4>
+                  <p class="role-slide__desc">Memberi warna keemasan dan rasa khas yang membumi.</p>
+                </div>
+              </article>
+
+              <article class="role-slide" data-role-index="5">
+                <div class="role-slide__visual">
+                  <span class="role-slide__halo" aria-hidden="true"></span>
+                  <img
+                    class="role-slide__img"
+                    src="/assets/img/bahan-serai.webp" srcset="/assets/img/bahan-serai-480.webp 480w, /assets/img/bahan-serai.webp 868w" sizes="(max-width: 760px) 320px, 520px"
+                    alt="Batang serai segar disimpul bersama helai daun jeruk purut"
+                    width="868"
+                    height="734"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                </div>
+                <div class="role-slide__copy">
+                  <span class="role-slide__step">Bahan 06 dari 07</span>
+                  <h4 class="role-slide__name">Serai</h4>
+                  <p class="role-slide__desc">Memberi aroma segar seperti lemon.</p>
+                </div>
+              </article>
+
+              <article class="role-slide" data-role-index="6">
+                <div class="role-slide__visual">
+                  <span class="role-slide__halo" aria-hidden="true"></span>
+                  <img
+                    class="role-slide__img"
+                    src="/assets/img/bahan-daun-salam.webp" srcset="/assets/img/bahan-daun-salam-480.webp 480w, /assets/img/bahan-daun-salam.webp 760w" sizes="(max-width: 760px) 320px, 520px"
+                    alt="Tangkai daun salam segar berwarna hijau mengilap"
+                    width="760"
+                    height="740"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                </div>
+                <div class="role-slide__copy">
+                  <span class="role-slide__step">Bahan 07 dari 07</span>
+                  <h4 class="role-slide__name">Daun Salam</h4>
+                  <p class="role-slide__desc">Memberi aroma herbal yang halus.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="roles-controls container">
+            <div class="roles-dots" id="roles-dots" role="group" aria-label="Pilih bahan secara langsung">
+              <button class="role-dot is-active" type="button" data-role-dot="0" aria-label="Daging Ayam">Daging Ayam</button>
+              <button class="role-dot" type="button" data-role-dot="1" aria-label="Santan">Santan</button>
+              <button class="role-dot" type="button" data-role-dot="2" aria-label="Lengkuas">Lengkuas</button>
+              <button class="role-dot" type="button" data-role-dot="3" aria-label="Jahe">Jahe</button>
+              <button class="role-dot" type="button" data-role-dot="4" aria-label="Kunyit">Kunyit</button>
+              <button class="role-dot" type="button" data-role-dot="5" aria-label="Serai">Serai</button>
+              <button class="role-dot" type="button" data-role-dot="6" aria-label="Daun Salam">Daun Salam</button>
+            </div>
+
+            <div class="roles-nav">
+              <button class="nav-circle" id="role-prev" type="button" aria-label="Bahan sebelumnya">←</button>
+              <button class="nav-circle" id="role-next" type="button" aria-label="Bahan berikutnya">→</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Songket SVG Divider -->
+    <div class="songket-divider" aria-hidden="true">
+      <svg viewBox="0 0 1200 28" preserveAspectRatio="xMidYMid slice" fill="none">
+        <rect width="1200" height="28" fill="url(#songket-pat)"/>
+      </svg>
+    </div>
+
+    <!-- =========================================================
+         SECTION 4: PROSES MEMASAK
+         Click-to-load YouTube facade (no YouTube requests before the click)
+         ========================================================= -->
+    <section class="process-section" id="proses" aria-labelledby="process-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" id="process-heading" data-reveal="chars">Proses Memasak</h2>
+          <p class="section-subtitle" data-reveal="lines">Tonton langkah demi langkah cara memasak kalio ayam.</p>
+        </div>
+
+        <div class="video-frame" id="video-frame">
+          <div class="video-facade" id="video-facade">
+            <div class="video-facade__fallback" aria-hidden="true">
+              <img
+                src="/assets/img/hero-angle.webp" srcset="/assets/img/hero-angle-480.webp 480w, /assets/img/hero-angle.webp 806w" sizes="(max-width: 760px) 270px, 460px"
+                alt=""
+                width="806"
+                height="642"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+            <img
+              class="video-facade__thumb"
+              id="video-thumb"
+              alt="Gambar mini video proses memasak kalio ayam"
+              width="640"
+              height="480"
+              decoding="async"
+              hidden
+            >
+            <span class="video-facade__shade" aria-hidden="true"></span>
+            <button
+              class="video-facade__play"
+              id="video-play"
+              type="button"
+              aria-label="Putar video proses memasak kalio ayam"
+              data-cursor="PUTAR VIDEO"
+            >
+              <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" focusable="false">
+                <path d="M8 5.5v13l11-6.5z" fill="currentColor"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <p class="video-link-row">
+          <a class="video-link" href="%VIDEO_WATCH_URL%" target="_blank" rel="noopener noreferrer">
+            Tonton di YouTube
+            <span class="video-link__arrow" aria-hidden="true">↗</span>
+          </a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer class="site-footer">
+    <div class="songket-divider songket-divider--footer" aria-hidden="true">
+      <svg viewBox="0 0 1200 28" preserveAspectRatio="xMidYMid slice" fill="none">
+        <rect width="1200" height="28" fill="url(#songket-pat)"/>
+      </svg>
+    </div>
+
+    <div class="footer-bg" aria-hidden="true">
+      <img src="/assets/img/bg-daun-pisang.webp" alt="" width="1376" height="768" loading="lazy" decoding="async">
+    </div>
+
+    <div class="container footer-inner">
+      <p class="footer-closing">
+        Dari tungku dapur Minangkabau ke meja makan—kehangatan santan dan rempah yang dirawat lewat kesabaran.
+      </p>
+      <nav class="footer-nav" aria-label="Navigasi bagian halaman">
+        <a href="#beranda">Beranda</a>
+        <a href="#tentang">Apa itu Kalio</a>
+        <a href="#bahan">Bahan-bahan</a>
+        <a href="#peran">Peran Bahan</a>
+        <a href="#proses">Proses Memasak</a>
+      </nav>
+      <p class="footer-credits">
+        Sajian Visual Kuliner Nusantara · Kalio Ayam Khas Minangkabau, Sumatera Barat.<br>
+        Foto hidangan dan bahan merupakan ilustrasi buatan AI. Video proses memasak diputar dari YouTube.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Custom Cursor Pill (fine pointers only) -->
+  <div class="cursor-pill" id="cursor-pill" aria-hidden="true">
+    <span class="cursor-pill__diamond"></span>
+    <span class="cursor-pill__text" id="cursor-pill-text">PUTAR REMPAH</span>
+  </div>
+
+  <script type="module" src="/src/scripts/main.js"></script>
+</body>
+</html>
